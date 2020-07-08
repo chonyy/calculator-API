@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator_API_ASP", "Calcu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculate", "..\cs-calculator-practice\Input\Calculate.csproj", "{D0553CE2-D8C4-4A8B-BA5B-9DB84CD82A6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{1C48217F-36EB-4A2F-B0B1-6933339AEB46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D0553CE2-D8C4-4A8B-BA5B-9DB84CD82A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0553CE2-D8C4-4A8B-BA5B-9DB84CD82A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0553CE2-D8C4-4A8B-BA5B-9DB84CD82A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C48217F-36EB-4A2F-B0B1-6933339AEB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C48217F-36EB-4A2F-B0B1-6933339AEB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C48217F-36EB-4A2F-B0B1-6933339AEB46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C48217F-36EB-4A2F-B0B1-6933339AEB46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
