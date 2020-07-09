@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Calculator_API_ASP.Utils
 {
-    public class LogUtils
+    public class LogUtils : IUtils
     {
         public int AddToLog(string UserName, double Num1, double Num2, string OP)
         {
@@ -15,10 +15,10 @@ namespace Calculator_API_ASP.Utils
             {
                 var emp = context.Employee.Where(emp => emp.EmpName == UserName).FirstOrDefault();
 
-                // new employee, add to employee table
-                if(emp == null)
+                //new employee, add to employee table
+                if (emp == null)
                 {
-                    var newEmp = new Employee{EmpName = UserName};
+                    var newEmp = new Employee { EmpName = UserName };
                     context.Employee.Add(newEmp);
                     context.SaveChanges();
                 }
@@ -26,12 +26,11 @@ namespace Calculator_API_ASP.Utils
                 emp = context.Employee.Where(emp => emp.EmpName == UserName).FirstOrDefault();
                 var log = new Log
                 {
-                    User = emp,
                     Num1 = Num1,
                     Num2 = Num2,
                     Op = OP
                 };
-                context.Log.Add(log);
+                emp.Log.Add(log);
                 context.SaveChanges();
 
                 return emp.Id;
@@ -53,12 +52,11 @@ namespace Calculator_API_ASP.Utils
                 emp = await context.Employee.Where(emp => emp.EmpName == UserName).FirstOrDefaultAsync();
                 var log = new Log
                 {
-                    User = emp,
                     Num1 = Num1,
                     Num2 = Num2,
                     Op = OP
                 };
-                context.Log.Add(log);
+                emp.Log.Add(log);
                 await context.SaveChangesAsync();
 
                 return log;

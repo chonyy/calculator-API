@@ -29,8 +29,9 @@ namespace Calculator_API_ASP.Controllers
                 return BadRequest("Invalid Operator!");
 
             // add to log
-            var utils = new LogUtils();
-            var UserID = utils.AddToLog(cal.UserName, cal.Num1, cal.Num2, cal.OP);
+            var logUtils = new LogUtils();
+            var service = new LogService(logUtils);
+            var UserID = service.DoService(cal.UserName, cal.Num1, cal.Num2, cal.OP);
             // calculate answer
             var logic = new CalculateLogic();
             var ans = logic.DoCalculation(cal.Num1, cal.Num2, cal.OP);

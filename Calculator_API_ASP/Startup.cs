@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Calculator_API_ASP.Models;
+using Calculator_API_ASP.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,7 @@ namespace Calculator_API_ASP {
         public void ConfigureServices(IServiceCollection services) {
             services.AddControllers();
             services.AddDbContext<TestingContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Testing")));
+            services.AddSingleton<IUtils, LogUtils>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
